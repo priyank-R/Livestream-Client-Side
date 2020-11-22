@@ -28,6 +28,8 @@ export const createStream = (formValues) => {
 
     const {userId} = getState().auth
 
+    console.log('formvalues inside action is',formValues)
+
     const response = await streams.post("/streams", {...formValues,userId});
     dispatch({
       type: CREATE_STREAM,
